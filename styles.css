@@ -57,7 +57,7 @@ body {
 }
 
 .intro-text h1 {
-    font-size: 36px;
+    font-size: 48px; /* Increased font size for the banner heading */
     margin-bottom: 20px;
 }
 
@@ -79,4 +79,5 @@ body {
     font-size: 36px;
     margin-bottom: 20px;
 }
+
 
