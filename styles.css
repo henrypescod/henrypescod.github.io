@@ -1,183 +1,80 @@
-/* General Styles */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
 }
 
-a {
-    color: #0073e6;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #005bb5;
-    text-decoration: underline;
-}
-
-/* Menu Banner */
 .menu-banner {
-    background-color: #0073e6;
-    color: white;
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
 
 .menu-banner ul {
-    list-style: none;
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 .menu-banner ul li {
-    display: inline;
-    margin: 0 15px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu-banner ul li:last-child {
+    margin-right: 0;
 }
 
 .menu-banner ul li a {
-    color: white;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease-in-out;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
 }
 
 .menu-banner ul li a:hover {
-    background-color: #005bb5;
-    border-radius: 5px;
-}
-
-/* Sections */
-section {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: auto;
+    text-decoration: underline;
 }
 
 .intro-section {
-    background-color: white;
+    background-color: #f9f9f9;
+    padding: 50px 0;
     text-align: center;
-    padding: 60px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.intro-section .profile-picture img {
-    width: 150px;
-    height: 150px;
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.profile-picture img {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.intro-section h1 {
-    margin-bottom: 20px;
-    font-size: 2em;
-    color: #0073e6;
+    margin-top: 20px;
 }
 
 .portfolio-section,
 .testimonials-section,
 .contact-section {
     background-color: #fff;
-    margin-bottom: 20px;
-    padding: 60px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 50px 0;
+    text-align: center;
 }
 
 .portfolio-section h2,
 .testimonials-section h2,
 .contact-section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #0073e6;
-    font-size: 2em;
-}
-
-.portfolio-section .portfolio-item,
-.testimonials-section .testimonial,
-.contact-section .contact-info {
+    font-size: 36px;
     margin-bottom: 20px;
 }
-
-.portfolio-section .portfolio-item img,
-.testimonials-section .testimonial img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Contact Section */
-.contact-section p {
-    text-align: center;
-    font-size: 1.1em;
-}
-
-.contact-section a {
-    display: block;
-    margin: 10px 0;
-}
-Updated index.html
-Ensure your index.html links to the updated CSS file:
-
-html
-Copy code
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Henry Pescod - Data Analyst Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Menu Banner -->
-    <nav class="menu-banner">
-        <ul>
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#intro">INTRO</a></li>
-            <li><a href="#portfolio">PORTFOLIO</a></li>
-            <li><a href="#testimonials">TESTIMONIALS</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-        </ul>
-    </nav>
-
-    <!-- Intro Section -->
-    <section id="intro" class="intro-section">
-        <div class="profile-picture">
-            <img src="https://drive.google.com/uc?export=view&id=1VOKQLICFSt1iFhObXxr2yQh4w9OLfDvT" alt="Henry Pescod">
-        </div>
-        <div class="intro-text">
-            <h1>About Me</h1>
-            <p>I'm an experienced analyst and entrepreneur with a draw towards socially minded business. I have 15 years of experience as a property professional within this time establishing 3 businesses within the retail and hospitality sectors. In more recent years I completed a leadership programme in the impact sector, securing a role in designing and running government-backed social innovation competitions. My particular strengths lie in building relationships, business operations, and financial analysis.</p>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio-section">
-        <h2>Portfolio</h2>
-        <!-- Your portfolio items can go here -->
-        <!-- Each portfolio item can be a card with an image, title, and description -->
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section">
-        <h2>Testimonials</h2>
-        <!-- Testimonials from clients or colleagues can go here -->
-        <!-- Each testimonial can be a card with the testimonial text and the name of the person -->
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h2>Contact Me</h2>
-        <!-- You can include a contact form or just provide your email/phone for contact -->
-        <!-- Example: -->
-        <p>Email: henry.pescod@gmail.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/henrypescod" target="_blank">https://www.linkedin.com/in/henrypescod</a></p>
-    </section>
-</body>
-</html>
