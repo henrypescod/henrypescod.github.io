@@ -1,100 +1,98 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-.top-banner {
-    background-color: #222;
-    color: #fff;
-    padding: 10px 0;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.top-banner-container,
-.menu-container {
+.header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+}
+
+.logo {
+    margin: 0;
 }
 
 .logo a {
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
     color: #fff;
+    text-decoration: none;
+    font-size: 24px;
 }
 
-.menu ul {
+.nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.menu ul li {
-    display: inline;
+.nav ul li {
+    display: inline-block;
     margin-right: 20px;
 }
 
-.menu ul li a {
-    text-decoration: none;
+.nav ul li:last-child {
+    margin-right: 0;
+}
+
+.nav ul li a {
     color: #fff;
-    font-size: 18px;
+    text-decoration: none;
 }
 
 .main-content {
-    display: flex;
-    max-width: 1200px;
-    margin: 20px auto;
+    padding: 50px 0;
 }
 
-.left-column {
-    flex: 1;
-}
-
-.right-column {
-    flex: 1;
-}
-
-.profile-info {
+.profile {
     display: flex;
     align-items: center;
-    text-align: center;
 }
 
-.profile-info img {
+.profile img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-right: 20px;
 }
 
 .profile-text {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.thin-column {
     flex: 1;
-    padding-right: 20px;
 }
 
-.main-column {
-    flex: 2;
+.profile-name {
+    margin-top: 0;
 }
 
-.profile-text h1 {
+.about {
+    margin-top: 30px;
+}
+
+.section-title {
+    color: #333;
     font-size: 24px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
-.profile-text p {
-    margin: 5px 0;
+.about-description {
+    line-height: 1.6;
 }
 
-.profile-text img {
-    width: 24px;
-    vertical-align: middle;
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
 }
