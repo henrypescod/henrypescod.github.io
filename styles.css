@@ -1,0 +1,58 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #005bb5;
+    text-decoration: underline;
+}
+
+/* Menu Banner */
+.menu-banner {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.menu-banner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.menu-banner ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.menu-banner ul li a {
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.menu-banner ul li a:hover {
+    background-color: #005bb5;
+    border-radius: 5px;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
