@@ -4,12 +4,13 @@ body {
     padding: 0;
 }
 
-.menu-banner {
+.top-banner {
     background-color: #222;
     color: #fff;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
+.top-banner-container,
 .menu-container {
     display: flex;
     justify-content: space-between;
@@ -48,36 +49,9 @@ body {
     padding: 0 20px;
 }
 
-.intro-section, .portfolio-section, .testimonials-section, .contact-section {
+.intro-section,
+.portfolio-section,
+.testimonials-section,
+.contact-section {
     padding: 50px 0;
 }
-
-.intro-text {
-    text-align: center;
-}
-
-.intro-text h1 {
-    font-size: 48px; /* Increased font size for the banner heading */
-    margin-bottom: 20px;
-}
-
-.intro-text p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-.profile-picture img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-top: 20px;
-}
-
-.portfolio-section h2,
-.testimonials-section h2,
-.contact-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-
