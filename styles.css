@@ -1,50 +1,59 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 .menu-banner {
-    background-color: #000;
+    background-color: #222;
     color: #fff;
-    padding: 20px;
-    text-align: center;
+    padding: 20px 0;
 }
 
-.menu-banner ul {
-    list-style-type: none;
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu ul {
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.menu-banner ul li {
-    display: inline-block;
+.menu ul li {
+    display: inline;
     margin-right: 20px;
 }
 
-.menu-banner ul li:last-child {
-    margin-right: 0;
-}
-
-.menu-banner ul li a {
-    color: #fff;
+.menu ul li a {
     text-decoration: none;
+    color: #fff;
     font-size: 18px;
 }
 
-.menu-banner ul li a:hover {
-    text-decoration: underline;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.intro-section {
-    background-color: #f9f9f9;
+.intro-section, .portfolio-section, .testimonials-section, .contact-section {
     padding: 50px 0;
-    text-align: center;
 }
 
 .intro-text {
-    max-width: 800px;
-    margin: 0 auto;
+    text-align: center;
 }
 
 .intro-text h1 {
@@ -64,17 +73,10 @@ body {
     margin-top: 20px;
 }
 
-.portfolio-section,
-.testimonials-section,
-.contact-section {
-    background-color: #fff;
-    padding: 50px 0;
-    text-align: center;
-}
-
 .portfolio-section h2,
 .testimonials-section h2,
 .contact-section h2 {
     font-size: 36px;
     margin-bottom: 20px;
 }
+
