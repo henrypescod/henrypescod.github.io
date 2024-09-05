@@ -1,97 +1,222 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  height: 100%;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background: #FFF6E6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+@font-face {
+  font-family: Founders Grotesk;
+  src: url("fonts/FoundersGroteskWeb-Semibold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("fonts/Inter-Regular.woff2") format("woff2");
+}
+
+.text-heading {
+  font-family: Founders Grotesk, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+.text-base {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  width: 44px;
+  background: #FFC896;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  padding-left: 80px;
+  padding-top: 80px;
+}
+
+.main-heading {
+  font-size: 40px;
+  color: #2F2F2F;
+  margin-bottom: 20px;
 }
 
 .header {
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
-    padding: 20px 0;
+  width: 460px;
+  padding-bottom: 60px;
 }
 
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.paragraph {
+  font-size: 16px;
+  color: #2F2F2F;
 }
 
-.logo {
-    margin: 0;
-    font-weight: bold;
+.projects {
+  flex-direction: row;
+  display: flex;
 }
 
-.logo a {
-    color: #000;
-    text-decoration: none;
-    font-size: 24px;
+.work {
+  width: 540px;
+  padding-right: 80px;
 }
 
-.nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.work__heading {
+  font-size: 24px;
+  color: #2F2F2F;
+  margin-bottom: 20px;
 }
 
-.nav ul li {
-    display: inline-block;
-    margin-right: 20px;
+.work__section {
+  padding-bottom: 60px;
 }
 
-.nav ul li:last-child {
-    margin-right: 0;
+.margin-bottom-20 {
+  margin-bottom: 20px;
 }
 
-.nav ul li a {
-    color: #999;
-    text-decoration: none;
+.images {
+  width: 410px;
+  padding-right: 30px;
 }
 
-.main-content {
-    background-color: #fff;
-    padding: 20px 0;
-    border-bottom: 1px solid #ccc;
+.images__image {
+  width: 100%;
+  height: auto;
 }
 
-.footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+.image-caption {
+  font-size: 13px;
+  color: #9A9286;
+  text-align: right;
+  padding: 10px 0 30px 0;
 }
 
-.profile {
-    display: flex;
-    align-items: center;
+.work__section__image {
+  display: none;
+  width: 460px;
 }
 
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-right: 20px;
+.work__section__image-caption {
+  font-size: 13px;
+  color: #9A9286;
+  text-align: center;
+  padding: 10px 0 30px 0;
+  display: none;
 }
 
-.profile-text {
-    flex: 1;
+.link:link,
+.link:visited,
+.link:hover,
+.link:active {
+  color: #2F2F2F;
 }
 
-.profile-name {
-    margin-top: 0;
+@media (max-width: 1080px) {
+  .images {
+    display: none;
+  }
+
+  .work__section__image {
+    display: block;
+  }
+
+  .work__section__image-caption {
+    display: block;
+  }
 }
 
-.section-title {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
+@media (max-width: 670px) {
+  .work {
+    width: 100%;
+    padding: 0 60px 0 0;
+  }
+
+  .work__section__image {
+    width: 100%;
+  }
+
+  .header {
+    width: 100%;
+    padding: 0 60px 60px 0;
+  }
+
+  .content {
+    padding-left: 60px;
+    padding-top: 60px;
+  }
 }
 
-.about-description {
-    line-height: 1.6;
+@media (max-width: 500px) {
+  .main-heading {
+    font-size: 30px;
+  }
+
+  .work__heading {
+    font-size: 20px;
+  }
+
+  .work__section {
+    padding-bottom: 40px;
+  }
+
+  .paragraph {
+    font-size: 14px;
+  }
+
+  .sidebar {
+    width: 30px;
+  }
+
+  .work {
+    padding: 0 40px 0 0;
+  }
+
+  .header {
+    padding: 0 40px 40px 0;
+  }
+
+  .content {
+    padding-left: 40px;
+    padding-top: 40px;
+  }
+
+  .work__section__image {
+    margin-bottom: 30px;
+  }
+
+  .work__section__image-caption {
+    display: none;
+  }
 }
