@@ -30,7 +30,7 @@ p {
 
 @font-face {
   font-family: Founders Grotesk;
-  src: url("fonts/FoundersGroteskWeb-Semibold.woff2") format("woff2");
+  src: url("Styles/fonts/FoundersGroteskWeb-Semibold.woff") format("woff2");
 }
 
 @font-face {
