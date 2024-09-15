@@ -54,7 +54,8 @@ p {
 }
 
 .sidebar {
-  width: 44px;
+  width: 10%;
+  min-width: 100px;
   background: #FFC896;
   flex-shrink: 0;
 }
