@@ -70,7 +70,7 @@ p {
 
 .main-heading {
   font-size: 40px;
-  color: #2F2F2F;
+  color: #E43D12;
   margin-bottom: 20px;
 }
 
@@ -81,7 +81,7 @@ p {
 
 .paragraph {
   font-size: 16px;
-  color: #2F2F2F;
+  color: #E43D12;
 }
 
 .projects {
@@ -96,7 +96,7 @@ p {
 
 .work__heading {
   font-size: 24px;
-  color: #2F2F2F;
+  color: #E43D12;
   margin-bottom: 20px;
 }
 
@@ -142,7 +142,7 @@ p {
 .link:visited,
 .link:hover,
 .link:active {
-  color: #2F2F2F;
+  color: #E43D12;
 }
 
 @media (max-width: 1080px) {
