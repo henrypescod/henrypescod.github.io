@@ -15,7 +15,7 @@ html {
 
 body {
   margin: 0;
-  background: #EBE9E1;
+  background: #FFCB9A;
 }
 
 h1,
@@ -56,7 +56,7 @@ p {
 
 .sidebar {
   width: 44px;
-  background: #EFB11D;
+  background: #D9B08C;
   flex-shrink: 0;
 }
 
@@ -70,7 +70,7 @@ p {
 
 .main-heading {
   font-size: 40px;
-  color: #E43D12;
+  color: #2F2F2F;
   margin-bottom: 20px;
 }
 
@@ -81,7 +81,7 @@ p {
 
 .paragraph {
   font-size: 16px;
-  color: #E43D12;
+  color: #2F2F2F;
 }
 
 .projects {
@@ -96,7 +96,7 @@ p {
 
 .work__heading {
   font-size: 24px;
-  color: #E43D12;
+  color: #2F2F2F;
   margin-bottom: 20px;
 }
 
@@ -142,7 +142,7 @@ p {
 .link:visited,
 .link:hover,
 .link:active {
-  color: #E43D12;
+  color: #2F2F2F;
 }
 
 @media (max-width: 1080px) {
