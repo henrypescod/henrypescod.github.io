@@ -51,6 +51,7 @@ p {
 .main {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap; /* Prevent wrapping on larger screens */
 }
 
 .sidebar {
@@ -65,6 +66,8 @@ p {
   flex-direction: column;
   padding-left: 80px;
   padding-top: 80px;
+  flex-grow: 1; /* Content grows to take the rest of the space */
+  padding: 2rem 4rem;
 }
 
 .main-heading {
