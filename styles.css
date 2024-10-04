@@ -167,6 +167,24 @@ p {
   color: #2F2F2F;
 }
 
+.cv-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #2F2F2F;
+  background-color: #FFCB9A;
+  text-decoration: none;
+  border: 2px solid #116466;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cv-button:hover {
+  background-color: #e6b88a;
+}
+
 @media (max-width: 1080px) {
   .projects {
     flex-direction: column;
