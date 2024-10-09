@@ -1,3 +1,4 @@
+/* Base styles */
 html,
 body {
   height: 100%;
@@ -185,6 +186,7 @@ p {
   background-color: #e6b88a;
 }
 
+/* Media queries for responsiveness */
 @media (max-width: 1080px) {
   .projects {
     flex-direction: column;
@@ -232,11 +234,17 @@ p {
   }
 
   .paragraph {
-    font-size: 14px;
+    font-size: 18px; /* Increase font size for better readability on mobile */
   }
 
   .sidebar {
-    width: 30px;
+    width: 100%;
+    float: none;
+    margin-top: 20px;
+  }
+
+  .sidebar nav ul li a {
+    font-size: 18px; /* Increase font size for better readability on mobile */
   }
 
   .work {
