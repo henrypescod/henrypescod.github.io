@@ -268,3 +268,40 @@ p {
     display: none;
   }
 }
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  .projects {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .work__section,
+  .images {
+    order: 0;
+  }
+
+  .image-container:nth-child(1) {
+    order: 1;
+  }
+
+  .image-container:nth-child(2) {
+    order: 3;
+  }
+
+  .image-container:nth-child(3) {
+    order: 5;
+  }
+
+  .image-container:nth-child(4) {
+    order: 7;
+  }
+
+  .work__section p:nth-of-type(1) {
+    order: 2;
+  }
+
+  .work__section p:nth-of-type(2) {
+    order: 4;
+  }
+}
