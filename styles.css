@@ -286,7 +286,11 @@ p {
   }
 
   .sidebar {
-    width: 150px; /* Reduce sidebar width for mobile view */
+    width: 80px; /* Further reduce sidebar width for mobile view */
+  }
+
+  .sidebar nav ul li a {
+    font-size: 10px; /* Further reduce font size for sidebar links */
   }
 
   .projects {
