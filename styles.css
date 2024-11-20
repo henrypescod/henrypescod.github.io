@@ -223,6 +223,7 @@ p {
   font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   margin-bottom: 20px; /* Add margin to separate lists from other content */
+  color: #2F2F2F; /* Ensure bullet points have the same color as the main text */
 }
 
 .content.full-width h2.text-heading {
