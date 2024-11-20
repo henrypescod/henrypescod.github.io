@@ -25,10 +25,10 @@
           </p>
           <div class="image-container">
             <img class="images__image" src="images/fishbone diagram.jpg" alt="Fishbone Diagram" />
-            <div class="image-caption text-base">Fishbone Diagram</div>
+            <div class="image-caption text-base">Disaggregating the problem question</div>
           </div>
           <p class="text-base paragraph">
-            We decided three questions to tackle the analysis:
+            We decided on three questions to tackle the analysis:
             <ul class="text-base">
               <li>Profit Impact: How would bringing deliveries in-house affect profitability?</li>
               <li>Optimal Fleet Size: What is the ideal fleet size to efficiently manage its delivery operations?</li>
@@ -52,6 +52,8 @@
               <li>Understand the data structure</li>
               <li>Identify trends, relationships, and anomalies</li>
             </ul>
+        </p>
+        <p class="text-base paragraph">
             Based on the findings, we cleaned and merged the datasets. Used the Postcodes.io API in Python (with pandas and requests libraries) to generate coordinates of all orders in the customer data.
           </p>
           <p class="text-base paragraph">
@@ -65,25 +67,30 @@
               <li>Customer orders and location - Customer Density</li>
               <li>Delivery costs and pallet space utilisation</li>
             </ul>
+          </p>
+          <h3 class="text-heading">Customer orders and location - Customer Density</h3>
+          <p class="text-base paragraph">
             Based on the longitude and latitude we grouped the orders by area so that we could optimise delivery routes by consolidating orders within close proximity. The Elbow and Silhouette methods determined the optimal number of clusters, revealing 4 clusters.
           </p>
           <div class="image-container">
             <img class="images__image" src="images/elbow and silhouette v1.jpg" alt="Clustering Analysis" />
-            <div class="image-caption text-base">Clustering Analysis</div>
+            <div class="image-caption text-base">Elbow and Silhouette to determine optimal number of clusters based on number of orders by location</div>
           </div>
           <p class="text-base paragraph">
             Tableau was used to visualise the data and area names were assigned.
           </p>
           <div class="image-container">
             <img class="images__image" src="images/client base for deliveries with names.jpg" alt="Tableau Visualisation" />
-            <div class="image-caption text-base">Tableau Visualisation</div>
+            <div class="image-caption text-base">Mapping of customer order density</div>
           </div>
+          </p>
+          <h3 class="text-heading">Delivery costs and pallet space utilisation</h3>
           <p class="text-base paragraph">
-            Delivery costs and pallet space utilisation. Our key objectives were to identify orders that are disproportionately expensive relative to the space they consume and to find a group that offers a balanced representation of revenue and costs. The Elbow and Silhouette methods determined the optimal number of clusters, revealing 7 clusters.
+            Our key objectives were to identify orders that are disproportionately expensive relative to the space they consume and to find a group that offers a balanced representation of revenue and costs. The Elbow and Silhouette methods determined the optimal number of clusters, revealing 7 clusters.
           </p>
           <div class="image-container">
             <img class="images__image" src="images/elbow and silhouette v2.jpg" alt="Delivery Costs" />
-            <div class="image-caption text-base">Delivery Costs</div>
+            <div class="image-caption text-base">Elbow and Silhouette to determine optimal number of clusters based on delivery costs and pallet space utilisation</div>
           </div>
           <div class="image-container">
             <img class="images__image" src="images/order type clusters within 50 miles.jpg" alt="Pallet Space Utilisation" />
@@ -94,7 +101,7 @@
           </p>
           <div class="image-container">
             <img class="images__image" src="images/order type clusters within 50 miles outliers removed.jpg" alt="Cluster Analysis" />
-            <div class="image-caption text-base">Cluster Analysis</div>
+            <div class="image-caption text-base">K means analysis based on delivery cost and pallet space</div>
           </div>
           <p class="text-base paragraph">
             We reviewed the key metrics, and three distinct segments emerged.
@@ -157,12 +164,21 @@
           </p>
           <div class="image-container">
             <img class="images__image" src="images/In house cost saving within 100 miles.jpg" alt="Radius Testing" />
-            <div class="image-caption text-base">Radius Testing</div>
+            <div class="image-caption text-base">Predicted cost savings within 100 miles</div>
           </div>
+          </p>
+          <div class="image-container">
+          <img class="images__image" src="images/In house cost saving within 25 miles.jpg" alt="Radius Testing" />
+          <div class="image-caption text-base">Predicted cost savings within 25 miles</div>
+         </div>
           <h3 class="text-heading">Testing the Results</h3>
           <p class="text-base paragraph">
             Using Tableau and Excel we compared the results in terms of hours and kilometres between the Python optimiser and Routific.
           </p>
+          <div class="image-container">
+            <img class="images__image" src="images/testing route software.jpg" alt="Radius Testing" />
+            <div class="image-caption text-base">Results of testing python vs off the shelf route optimisation software</div>
+           </div>
           <p class="text-base paragraph">
             The results shown in the chart above provided confidence in the accuracy of the route optimiser built in Python.
           </p>
