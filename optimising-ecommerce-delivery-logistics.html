@@ -16,12 +16,15 @@
         </div>
         <div class="project-details">
           <p class="text-base paragraph">
-            A large UK packaging ecommerce retailer was seeking to increase their profits by conducting deliveries within a set radius in house rather than using third party couriers. I led a team of 4 analysts to determine what the optimal in house delivery strategy should be.
+            A large UK packaging ecommerce retailer was seeking to increase their profits by conducting deliveries within a set radius in house rather than using third party couriers. 
+        </p>
+        <p class="text-base paragraph">
+            I led a team of 4 analysts to determine what the optimal in house delivery strategy should be.
           </p>
-          <h2 class="text-heading">Step 1 - Problem Breakdown and Determining Analysis Approach</h2>
           <br>
+          <h2 class="text-heading">Step 1 - Problem Breakdown and Determining Analysis Approach</h2>
           <p class="text-base paragraph">
-            I used a fishbone diagram to disaggregate the problem question “should the client bring deliveries in house?” before settling on our analysis approach.
+            We used a fishbone diagram to disaggregate the problem question “should the client bring deliveries in house?” before settling on our analysis approach.
           </p>
           <div class="image-container">
             <img class="images__image" src="images/fishbone diagram.jpg" alt="Fishbone Diagram" />
@@ -44,8 +47,8 @@
               <li>Test accuracy of the model with external software</li>
             </ol>
           </p>
-          <h2 class="text-heading">Step 2 - Data Cleaning and Wrangling</h2>
           <br>
+          <h2 class="text-heading">Step 2 - Data Cleaning and Wrangling</h2>
           <p class="text-base paragraph">
             We conducted EDA to:
             <ul class="text-base">
@@ -59,8 +62,8 @@
           <p class="text-base paragraph">
             Using the Google Distance Matrix API, we calculated distances from the client base to all coordinates (n=23,178), processed in batches of 25.
           </p>
-          <h2 class="text-heading">Step 3 - Clustering Analysis</h2>
           <br>
+          <h2 class="text-heading">Step 3 - Clustering Analysis</h2>
           <p class="text-base paragraph">
             We used K-means clustering to analyse the relationship between:
             <ul class="text-base">
@@ -101,7 +104,7 @@
           </p>
           <div class="image-container">
             <img class="images__image" src="images/order type clusters within 50 miles outliers removed.jpg" alt="Cluster Analysis" />
-            <div class="image-caption text-base">K means analysis based on delivery cost and pallet space</div>
+            <div class="image-caption text-base">K-means analysis of delivery cost and pallet space</div>
           </div>
           <p class="text-base paragraph">
             We reviewed the key metrics, and three distinct segments emerged.
@@ -122,8 +125,8 @@
           <p class="text-base paragraph">
             We chose to focus our testing on the green cluster.
           </p>
-          <h2 class="text-heading">Step 4 - Route Optimising</h2>
           <br>
+          <h2 class="text-heading">Step 4 - Route Optimising</h2>
           <p class="text-base paragraph">
             We used Python and Google Directions API to optimise daily routes which involved:
             <ul class="text-base">
@@ -150,8 +153,8 @@
             <img class="images__image" src="images/vehicle capacity.jpg" alt="Vehicle Capacity" />
             <div class="image-caption text-base">Vehicle Capacity</div>
           </div>
-          <h2 class="text-heading">Step 5 - Predicting Cost Savings</h2>
           <br>
+          <h2 class="text-heading">Step 5 - Predicting Cost Savings</h2>
           <p class="text-base paragraph">
             Using Python, we optimised vehicle type and fleet size for each location. The result was 4 LGVs, ensuring pallet capacity was met. This fleet size enabled cost savings based on pre-agreed vehicle cost assumptions with the client.
           </p>
@@ -182,8 +185,8 @@
           <p class="text-base paragraph">
             The results shown in the chart above provided confidence in the accuracy of the route optimiser built in Python.
           </p>
-          <h2 class="text-heading">Step 6 - Provided Insights and Recommendations</h2>
           <br>
+          <h2 class="text-heading">Step 6 - Provided Insights and Recommendations</h2>
           <p class="text-base paragraph">
             Insights:
             <ul class="text-base">
