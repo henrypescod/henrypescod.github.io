@@ -186,6 +186,53 @@ p {
   background-color: #e6b88a;
 }
 
+/* Specific styles for the full-width content on the subpage */
+.content.full-width {
+  margin-right: 0; /* Remove right margin for full-width content */
+}
+
+.content.full-width .header {
+  width: 100%; /* Full width for header */
+  padding-bottom: 60px;
+}
+
+.content.full-width .paragraph {
+  font-size: 16px;
+  color: #2F2F2F;
+  margin-bottom: 20px; /* Add margin to separate paragraphs */
+}
+
+.content.full-width .image-container {
+  margin: 20px 0; /* Add margin to separate images from text */
+}
+
+.content.full-width .images__image {
+  width: 100%;
+  height: auto;
+}
+
+.content.full-width .image-caption {
+  font-size: 13px;
+  color: #9A9286;
+  text-align: right;
+  padding: 10px 0 30px 0;
+}
+
+.content.full-width ul,
+.content.full-width ol {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  margin-bottom: 20px; /* Add margin to separate lists from other content */
+}
+
+.content.full-width h2.text-heading {
+  margin-bottom: 20px; /* Add extra break after h2 */
+}
+
+.content.full-width h3.text-heading {
+  margin-bottom: 20px; /* Add extra break after h3 */
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 1080px) {
   .projects {

@@ -10,18 +10,190 @@
   <body>
     <div class="main">
       <div class="left-strip"></div>
-      <div class="content">
+      <div class="content full-width">
         <div class="header">
           <h1 class="text-heading main-heading">Optimising E-Commerce Delivery Logistics — Full Analysis</h1>
         </div>
         <div class="project-details">
           <p class="text-base paragraph">
-            <!-- Add the full case study details here -->
+            A large UK packaging ecommerce retailer was seeking to increase their profits by conducting deliveries within a set radius in house rather than using third party couriers. I led a team of 4 analysts to determine what the optimal in house delivery strategy should be.
+          </p>
+          <h2 class="text-heading">Step 1 - Problem Breakdown and Determining Analysis Approach</h2>
+          <br>
+          <p class="text-base paragraph">
+            I used a fishbone diagram to disaggregate the problem question “should Kite bring deliveries in house?” before settling on our analysis approach.
           </p>
           <div class="image-container">
-            <img class="images__image" src="images/In house cost saving within 50 miles.jpg" />
-            <div class="image-caption text-base">Predicted cost saving of in-house deliveries within a 50 mile radius</div>
+            <img class="images__image" src="images/fishbone diagram.jpg" alt="Fishbone Diagram" />
+            <div class="image-caption text-base">Fishbone Diagram</div>
           </div>
+          <p class="text-base paragraph">
+            We decided three questions to tackle the analysis:
+            <ul class="text-base">
+              <li>Profit Impact: How would bringing deliveries in-house affect profitability?</li>
+              <li>Optimal Fleet Size: What is the ideal fleet size to efficiently manage its delivery operations?</li>
+              <li>Optimal Delivery Freight: What delivery freight model would be best in terms of cost and operational efficiency?</li>
+            </ul>
+          </p>
+          <p class="text-base paragraph">
+            We settled on 4 objectives for the analysis:
+            <ol class="text-base">
+              <li>To create a model that will predict the profitability of a delivery route</li>
+              <li>Be able to predict which routes within a 50 mile radius will be profitable to undertake in house</li>
+              <li>Gain a better understanding of the most important factors affecting in house delivery profitability</li>
+              <li>Test accuracy of the model with external software</li>
+            </ol>
+          </p>
+          <h2 class="text-heading">Step 2 - Data Cleaning and Wrangling</h2>
+          <br>
+          <p class="text-base paragraph">
+            We conducted EDA to:
+            <ul class="text-base">
+              <li>Understand the data structure</li>
+              <li>Identify trends, relationships, and anomalies</li>
+            </ul>
+            Based on the findings, we cleaned and merged the datasets. Used the Postcodes.io API in Python (with pandas and requests libraries) to generate coordinates of all orders in the customer data.
+          </p>
+          <p class="text-base paragraph">
+            Using the Google Distance Matrix API, we calculated distances from the client base to all coordinates (n=23,178), processed in batches of 25.
+          </p>
+          <h2 class="text-heading">Step 3 - Clustering Analysis</h2>
+          <br>
+          <p class="text-base paragraph">
+            We used K-means clustering to analyse the relationship between:
+            <ul class="text-base">
+              <li>Customer orders and location - Customer Density</li>
+              <li>Delivery costs and pallet space utilisation</li>
+            </ul>
+            Based on the longitude and latitude we grouped the orders by area so that we could optimise delivery routes by consolidating orders within close proximity. The Elbow and Silhouette methods determined the optimal number of clusters, revealing 4 clusters.
+          </p>
+          <div class="image-container">
+            <img class="images__image" src="images/elbow and silhouette v1.jpg" alt="Clustering Analysis" />
+            <div class="image-caption text-base">Clustering Analysis</div>
+          </div>
+          <p class="text-base paragraph">
+            Tableau was used to visualise the data and area names were assigned.
+          </p>
+          <div class="image-container">
+            <img class="images__image" src="images/client base for deliveries with names.jpg" alt="Tableau Visualisation" />
+            <div class="image-caption text-base">Tableau Visualisation</div>
+          </div>
+          <p class="text-base paragraph">
+            Delivery costs and pallet space utilisation. Our key objectives were to identify orders that are disproportionately expensive relative to the space they consume and to find a group that offers a balanced representation of revenue and costs. The Elbow and Silhouette methods determined the optimal number of clusters, revealing 7 clusters.
+          </p>
+          <div class="image-container">
+            <img class="images__image" src="images/elbow and silhouette v2.jpg" alt="Delivery Costs" />
+            <div class="image-caption text-base">Delivery Costs</div>
+          </div>
+          <div class="image-container">
+            <img class="images__image" src="images/order type clusters within 50 miles.jpg" alt="Pallet Space Utilisation" />
+            <div class="image-caption text-base">Pallet Space Utilisation</div>
+          </div>
+          <p class="text-base paragraph">
+            After reviewing the above, removed 2 clear outliers, resulting in 6 clusters.
+          </p>
+          <div class="image-container">
+            <img class="images__image" src="images/order type clusters within 50 miles outliers removed.jpg" alt="Cluster Analysis" />
+            <div class="image-caption text-base">Cluster Analysis</div>
+          </div>
+          <p class="text-base paragraph">
+            We reviewed the key metrics, and three distinct segments emerged.
+          </p>
+          <div class="image-container">
+            <img class="images__image" src="images/cluster analysis revenue pallet overview.jpg" alt="Segment Analysis" />
+            <div class="image-caption text-base">Segment Analysis</div>
+          </div>
+          <p class="text-base paragraph">
+            The red cluster has a high volume of orders but is characterised by low value per order and low pallet usage. These orders are resource-intensive, requiring many deliveries to achieve significant revenue, stressing daily operational limits.
+          </p>
+          <p class="text-base paragraph">
+            The orange cluster comprises large, high-value orders that, although low in volume, offer substantial revenue but significant pallet usage. This group has the lowest cost and revenue ratio per pallet and a high value per order.
+          </p>
+          <p class="text-base paragraph">
+            The green cluster strikes a balance with moderate order volume and pallet capacity. This group has the highest revenue and cost ratio per pallet and above-average revenue per order. This suggests that potential savings could be achieved by insourcing, thus reducing the cost per pallet while maintaining good revenue coverage.
+          </p>
+          <p class="text-base paragraph">
+            We chose to focus our testing on the green cluster.
+          </p>
+          <h2 class="text-heading">Step 4 - Route Optimising</h2>
+          <br>
+          <p class="text-base paragraph">
+            We used Python and Google Directions API to optimise daily routes which involved:
+            <ul class="text-base">
+              <li>Filtering orders by type, location, and weekday (Monday to Friday)</li>
+              <li>Setting parameters: max stops and 8 minutes per stop</li>
+              <li>Using longitude and latitude to plan optimal routes</li>
+              <li>Making API calls for stop-by-stop analysis</li>
+              <li>Exporting results to CSV and Excel files</li>
+            </ul>
+          </p>
+          <h3 class="text-heading">Driver Duration</h3>
+          <p class="text-base paragraph">
+            An important goal was to keep the vehicles on the road for as long as possible. The output allowed us to see the total driving duration for each route which we wanted to hit the target of 8 hours or as close to, not exceed the maximum allowed driving time per driver of 10 hours.
+          </p>
+          <div class="image-container">
+            <img class="images__image" src="images/vehicle duration.jpg" alt="Driver Duration" />
+            <div class="image-caption text-base">Vehicle Duration</div>
+          </div>
+          <h3 class="text-heading">Vehicle Capacity Used</h3>
+          <p class="text-base paragraph">
+            An important goal was to have the fleet as full as possible. Based on the results of the route optimisation we were able to see how the vehicle usage varies over the month of June (pallet space, cubic and payload).
+          </p>
+          <div class="image-container">
+            <img class="images__image" src="images/vehicle capacity.jpg" alt="Vehicle Capacity" />
+            <div class="image-caption text-base">Vehicle Capacity</div>
+          </div>
+          <h2 class="text-heading">Step 5 - Predicting Cost Savings</h2>
+          <br>
+          <p class="text-base paragraph">
+            Using Python, we optimised vehicle type and fleet size for each location. The result was 4 LGVs, ensuring pallet capacity was met. This fleet size enabled cost savings based on pre-agreed vehicle cost assumptions with the client.
+          </p>
+          <div class="image-container">
+            <img class="images__image" src="images/In house cost saving within 50 miles.jpg" alt="Cost Savings" />
+            <div class="image-caption text-base">Cost Savings within 50 miles</div>
+          </div>
+          <p class="text-base paragraph">
+            We tested the model on a 25 mile and 100 mile radius using the same methodology as the 50 mile radius. Both returned delivery cost increases for the client.
+          </p>
+          <div class="image-container">
+            <img class="images__image" src="images/In house cost saving within 100 miles.jpg" alt="Radius Testing" />
+            <div class="image-caption text-base">Radius Testing</div>
+          </div>
+          <h3 class="text-heading">Testing the Results</h3>
+          <p class="text-base paragraph">
+            Using Tableau and Excel we compared the results in terms of hours and kilometres between the Python optimiser and Routific.
+          </p>
+          <p class="text-base paragraph">
+            The results shown in the chart above provided confidence in the accuracy of the route optimiser built in Python.
+          </p>
+          <h2 class="text-heading">Step 6 - Provided Insights and Recommendations</h2>
+          <br>
+          <p class="text-base paragraph">
+            Insights:
+            <ul class="text-base">
+              <li>Clustering within a 50-mile radius of the distribution centre enabled grouping areas based on order volumes.</li>
+              <li>The most profitable routes to manage in-house deliveries are:
+                <ul class="text-base">
+                  <li>Greater Birmingham and Black Country</li>
+                  <li>Leicestershire and East Midlands</li>
+                  <li>South Midlands and Cotswolds</li>
+                </ul>
+              </li>
+              <li>These routes combined could achieve a total monthly cost savings of £6.5k.</li>
+              <li>Operating with four 7.5-ton LGV vehicles and four drivers working 8-hour shifts from Monday to Friday is sufficient to cover the proposed routes.</li>
+              <li>Transitioning to in-house deliveries for these areas would reduce delivery costs as a percentage of revenue by 19%.</li>
+              <li>Prioritising high-revenue orders (those offering stronger returns per pallet) will enhance profitability while maximising the utilisation of available resources.</li>
+              <li>Deliveries for customers located between 25 and 100 miles from the warehouse, with the proposed fleet configuration, would not be cost-effective to manage in-house.</li>
+            </ul>
+          </p>
+          <p class="text-base paragraph">
+            Recommendations:
+            <ul class="text-base">
+              <li>Client can achieve profitability by transitioning certain delivery routes to in-house operations. To implement this, client should acquire four 7.5-ton LGV vehicles and hire four drivers to cover the three proposed routes with a Monday-to-Friday schedule.</li>
+              <li>The monthly operational cost is estimated at £27,800 (excluding vehicle purchase costs).</li>
+              <li>Client should establish agreements with courier services as contingency options to mitigate operational risks, ensuring continuity in case of fleet or driver issues.</li>
+            </ul>
+          </p>
         </div>
       </div>
       <div class="sidebar">
