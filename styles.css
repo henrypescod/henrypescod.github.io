@@ -96,7 +96,7 @@ p {
   flex-grow: 1; /* Content grows to take the rest of the space */
   padding: 2rem 4rem; /* Sets padding of 2rem on top/bottom, 4rem on left/right */
   margin-left: 44px; /* Adjust content margin to make space for the left strip */
-  margin-right: 220px; /* Adjust content margin to make space for the sidebar */
+  margin-right: 10px; /* Adjust content margin to make space for the sidebar */
 }
 
 .main-heading {
