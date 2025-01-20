@@ -132,6 +132,11 @@ p {
   margin-bottom: 20px;
 }
 
+/* New rule for h3 with .text-heading and .work__heading */
+h3.text-heading.work__heading {
+  font-size: 20px; /* Smaller font size for h3 */
+}
+
 .work__section {
   padding-bottom: 60px;
 }
